@@ -46,7 +46,7 @@ If an existing local data directory cannot be initialized, leave it untouched an
 
 ## Deploy to Render
 
-The included `render.yaml` Blueprint creates the Node.js web service and a PostgreSQL database. Connect this repository in the Render Dashboard and choose **New + → Blueprint** to deploy it. The Blueprint uses free instances for a demo; Render's free PostgreSQL databases expire after 30 days, so upgrade the database to a paid plan for persistent production use.
+The included `render.yaml` Blueprint creates the Node.js web service and references the existing Render PostgreSQL service named `peerloop-db` in the same workspace. This deployment shares account and learning data with that database. Connect this repository in the Render Dashboard and choose **New + → Blueprint** to deploy it. To use an isolated database, add a separate PostgreSQL instance and update the Blueprint; Render's free PostgreSQL databases expire after 30 days, so use a paid plan for persistent production data.
 
 ## Accounts and roles
 - Registration creates a `student` account by default.
